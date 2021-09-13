@@ -5,18 +5,18 @@ import org.openqa.selenium.chrome.ChromeDriver
 import java.util.concurrent.TimeUnit
 
 
-class TestSignup : StringSpec() {
+class TestWebDriver : StringSpec() {
     private val driver: WebDriver = ChromeDriver()
-    private val signupUrl = "https://se.ifmo.ru/courses/testing"
+    private val sheeshUrl = "https://se.ifmo.ru/courses/testing"
 
     init {
         driver.manage()?.timeouts()?.implicitlyWait(10, TimeUnit.SECONDS)
         driver.manage()?.window()?.maximize()
 
-        "Страница регистрации открывается" {
+        "Software Testing page opening" {
             driver.run {
-                get(signupUrl)
-                pageSource.shouldContain("Тестирование ")
+                get(sheeshUrl)
+                pageSource.shouldContain("Тестирование")
                 quit()
             }
         }
